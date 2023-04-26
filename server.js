@@ -12,6 +12,7 @@ const cors = require("cors");
 
 // Custom modules
 const connectDB = require("./config/dbConn");
+const corsOptions = require("./config/corsOptions");
 
 // Connect to MongoDB
 connectDB();
@@ -20,7 +21,7 @@ connectDB();
 const PORT = process.env.PORT || 3500;
 
 // Cross Origin Resource Sharing
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Built in middleware to handle urlencoded data
 app.use(express.urlencoded({ extended: false }));
