@@ -21,12 +21,8 @@ connectDB();
 const PORT = process.env.PORT || 3500;
 
 // Cross Origin Resource Sharing
-//app.use(cors(corsOptions));
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors(corsOptions));
+
 // Built in middleware to handle urlencoded data
 app.use(express.urlencoded({ extended: false }));
 
